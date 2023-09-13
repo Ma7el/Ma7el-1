@@ -1,0 +1,84 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ma7el - Checkout</title>
+  <!-- Include necessary CSS and JavaScript files -->
+
+  <script>
+    function submitOrder() {
+      var item = document.getElementById('selected-item').textContent;
+      var size = document.getElementById('selected-size').textContent;
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      // Prepare the data for sending
+      var data = {
+        item: item,
+        size: size,
+        name: name,
+        email: email,
+        message: message
+      };
+
+      // Send the data to send_email.php using AJAX
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'send_email.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            alert('Order submitted successfully!');
+          } else {
+            alert('Failed to submit order. Please try again.');
+          }
+        }
+      };
+      xhr.send(JSON.stringify(data));
+    }
+  </script>
+</head>
+<body>
+  <section>
+    <h2>Checkout</h2>
+    <p>Selected Item: <span id="selected-item"></span></p>
+    <p>Size: <span id="selected-size"></span></p>
+
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" required>
+
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+
+      <input type="button" value="Submit Order" onclick="submitOrder()">
+    </form>
+  </section>
+
+  <script>
+    // Retrieve the selected item and size from localStorage and populate the corresponding fields
+    var selectedItem = localStorage.getItem('selectedItem');
+    var selectedSize = localStorage.getItem('selectedSize');
+
+    document.getElementById('selected-item').textContent = selectedItem;
+    document.getElementById('selected-size').textContent = selectedSize;
+  </script>
+</body>
+</html>
+
+
+
+<link rel="stylesheet" type="text/css" href="style.css">

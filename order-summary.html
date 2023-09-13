@@ -1,0 +1,15 @@
+<section>
+    <h2>Order Summary</h2>
+    <p>Selected Item: <span id="selectedItem"></span></p>
+    <p>Selected Size: <span id="selectedSize"></span></p>
+  </section>
+  
+  <script>
+    // Retrieve the selected item and size from sessionStorage
+    var selectedItem = sessionStorage.getItem('selectedItem');
+    var selectedSize = sessionStorage.getItem('selectedSize');
+  
+    // Update the HTML elements with the retrieved values
+    document.getElementById('selectedItem').textContent = selectedItem;
+    document.getElementById('selectedSize').textContent = selectedSize;
+  </script>

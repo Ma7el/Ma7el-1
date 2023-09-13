@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ma7el - الجودة رقم واحد في ليبيا</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    var cartItems = [];
+
+    function addToCart(id, name, price, size) {
+      var item = {
+        id: id,
+        name: name,
+        price: price,
+        size: size
+      };
+      cartItems.push(item);
+      alert('Item added to cart!');
+      console.log(cartItems);
+    }
+    
+    function viewCart() {
+      // Save cartItems in localStorage to access them on the cart.html page
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      
+      // Redirect to cart.html
+      window.location.href = 'cart.html';
+    }
+    
+    function removeFromCart(index) {
+      cartItems.splice(index, 1);
+      viewCart();
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Ma7el  الجودة رقم واحد في ليبيا</h1>
+  </header>
+
+  <section>
+    <div class="jersey">
+      <img src="realmadrid.jpg" height="200" width="200" alt="ريال مدريد 23 24 الاساسية">
+      <h4>ريال مدريد 23 24 الاساسية</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey1-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey1', 'ريال مدريد 23 24 الاساسية', 120, document.getElementById('jersey1-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="barcelona.jpg" height="200" width="200" alt="برشلونة 23 24 الاساسية">
+      <h4>برشلونة 23 24 الاساسية</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey2-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey2', 'برشلونة 23 24 الاساسية', 120, document.getElementById('jersey2-size').value)">Add to Cart</button>
+    </div>
+
+    <!-- Add similar HTML structure for other jerseys -->
+    <div class="jersey">
+      <img src="realblack.jpg" height="200" width="200" alt="Realmadrid 3rd kit">
+      <h4>Realmadrid 3rd kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey3-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey3', 'Realmadrid 3rd kit', 120, document.getElementById('jersey3-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="cityaway.jpg" height="200" width="200" alt="Man united 23 24 Home kit">
+      <h4>Man city 23 24 away kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey4-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey4', 'Man city away kit', 120, document.getElementById('jersey4-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="city.jpg" height="200" width="200" alt="Man City 23 24 Home kit">
+      <h4>Man city 23 24 home kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey5-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey5', 'Man City home kit', 120, document.getElementById('jersey5-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="united.jpg" height="200" width="200" alt="Man united 23 24 Home kit">
+      <h4>Man united 23 24 Home kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey6-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey6', 'Man united 23 24 Home kit', 120, document.getElementById('jersey6-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="unitedaway.jpg" height="200" width="200" alt="Man united 23 24 away kit">
+      <h4>Man united 23 24 away kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey7-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey6', 'Man united 23 24 away kit', 120, document.getElementById('jersey7-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="juvi.jpg" height="200" width="200" alt="juventus 23 24 Home kit">
+      <h4>juventus 23 24 Home kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey8-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey8', 'juventus 23 24 Home kit', 120, document.getElementById('jersey8-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="juviaway.jpg" height="200" width="200" alt="juventus 23 24 away kit">
+      <h4>Juvenyus 23 24 away kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey9-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey9', 'Juventus 23 24 away kit', 120, document.getElementById('jersey9-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="barcaway.jpg" height="200" width="200" alt="Barcelona 23 24 away kit">
+      <h4>Barcelona 23 24 away kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey10-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey10', 'Barcelona 23 24 away kit', 120, document.getElementById('jersey10-size').value)">Add to Cart</button>
+    </div>
+
+
+    <div class="jersey">
+      <img src="arg.jpg" height="200" width="200" alt="Argentina 3 stars kit">
+      <h4>argentina 3 stars kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey11-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey11', 'Argentina 3 stars kit', 120, document.getElementById('jersey11-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="milan.jpg" height="200" width="200" alt="Milan 23 24 Home kit">
+      <h4>Man united 23 24 Home kit</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey12-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey12', 'Milan 23 24 Home kit', 120, document.getElementById('jersey12-size').value)">Add to Cart</button>
+    </div>
+
+    <div class="jersey">
+      <img src="mystery.png" height="200" width="200" alt="other">
+      <h4>other</h4>
+      <p class="price">Price: د.ل120</p>
+      <select id="jersey13-size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+      </select>
+      <button onclick="addToCart('jersey13', 'other', 120, document.getElementById('jersey13-size').value)">Add to Cart</button>
+    </div>
+
+
+
+
+    <!-- View Cart Button -->
+    <button onclick="viewCart()">View Cart</button>
+  </section>
+</body>
+</html>
+
+<script>
+  function addToCart(id, name, price, size) {
+    var item = {
+      id: id,
+      name: name,
+      price: price,
+      size: size
+    };
+    cartItems.push(item);
+    alert('Item added to cart!');
+    console.log(cartItems);
+  
+    // Get customer information
+    
+  
+  
+    // Prepare the data for sending
+    
+    
+    };
+  
+    // Send the data to send_email.php using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'send_email.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          alert(xhr.responseText);
+        } else {
+          alert('order NOT confirmed. Please try again.');
+        }
+      }
+    };
+    xhr.send(JSON.stringify(data));
+  </script>
+

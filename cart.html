@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ma7el - الجودة رقم واحد في ليبيا</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      margin: 20px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    #cart-items {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    #cart-items p {
+      margin: 5px 0;
+    }
+
+    #cart-items p:last-child {
+      font-weight: bold;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ma7el  الجودة رقم واحد في ليبيا</h1>
+  </header>
+
+  <section>
+    <h2>Cart Items</h2>
+    <div id="cart-items"></div>
+    <button onclick="goBack()">Go Back</button>
+    <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+  </section>
+
+  <script>
+    function goBack() {
+      // Redirect back to index.html
+      window.location.href = 'index.html';
+    }
+
+    function proceedToCheckout() {
+      // Redirect to checkout.html
+      window.location.href = 'order.html';
+    }
+
+    // Retrieve cartItems from localStorage
+    var cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+    var cartContainer = document.getElementById('cart-items');
+    cartContainer.innerHTML = '';
+
+    if (cartItems.length === 0) {
+      cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+      var totalPrice = 0;
+      for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        var itemHTML = '<p>' + item.name + ' - Price: $' + item.price + '</p>';
+        cartContainer.innerHTML += itemHTML;
+        totalPrice += item.price;
+      }
+      var totalPriceHTML = '<p>Total Price: $' + totalPrice + '</p>';
+      cartContainer.innerHTML += totalPriceHTML;
+    }
+
+    // Clear cartItems from localStorage after displaying them
+    localStorage.removeItem('cartItems');
+  </script>
+</body>
+</html>
+
+<script src="script.js"></script>
