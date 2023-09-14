@@ -6,7 +6,8 @@
 <head>
   <title>Ma7el - Checkout</title>
   <!-- Include necessary CSS and JavaScript files -->
-
+  <form action="https://formsubmit.co/ma7elorder@gmail.com" method="POST" />
+    <!-- Rest of your form code -->
   <script>
     function submitOrder() {
       var item = document.getElementById('selected-item').textContent;
@@ -48,15 +49,13 @@
     <p>Size: <span id="selected-size"></span></p>
 
     <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <form action="https://formsubmit.co/ma7elorder@gmail.com" method="POST" />
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
-
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+  
     <label for="location">Location:</label>
     <input type="text" id="location" name="location" required>
 
@@ -64,7 +63,7 @@
       <label for="message">Message:</label>
       <textarea id="message" name="message"></textarea>
 
-      <input type="button" value="Submit Order" onclick="submitOrder()">
+      <button type="submit">Submit order</button>
     </form>
   </section>
 
